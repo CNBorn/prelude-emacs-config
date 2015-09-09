@@ -61,7 +61,6 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 (setq ido-create-new-buffer 'always)
-(setq ido-file-extensions-order '(".py" ".emacs"))
 
 ;; Selection with Shift+Arrows
 (global-unset-key (vector (list 'shift 'left)))
