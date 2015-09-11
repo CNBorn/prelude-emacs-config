@@ -4,6 +4,7 @@
 ;;; Code:
 
 ;;color-theme
+(require 'prelude-packages)
 (prelude-require-package 'color-theme-sanityinc-tomorrow)
 (color-theme-sanityinc-tomorrow-night)
 
@@ -21,11 +22,24 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
+;; Helm, without using helm everywhere.
+(setq helm-split-window-default-side "below")
+(setq helm-split-window-in-side-p nil)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+
+;; Projectile
+(setq projectile-completion-system 'grizzl)
+
+;; Projectile ag-search
+(setq ag-arguments (list "--after=5" "--before=3" "--line-number" "--smart-case" "--nogroup" "--column" "--stats" "--"))
+
 ;; The Silver Searcher
 (prelude-require-package 'ag)
 
-;; Projectile Completion - using grizzl
-(setq projectile-completion-system 'grizzl)
+;; mode-line
+(setq size-indication-mode nil)
 
 ;; workgroups
 (prelude-require-package 'workgroups2)
