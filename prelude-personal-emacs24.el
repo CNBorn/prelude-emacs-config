@@ -51,6 +51,9 @@
 (setq wg-session-file "~/.emacs.d/.emacs_workgroups")
 (setq wg-emacs-exit-save-behavior           'save)
 (setq wg-workgroups-mode-exit-save-behavior 'save)
+;; Make sure workgroups are saved when created.
+;; Ideally a wg-after-create-workgroup-hook will help
+(add-hook 'wg-before-switch-to-workgroup-hook 'wg-save-session)
 (workgroups-mode 1)
 
 ;; save states
