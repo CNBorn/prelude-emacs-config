@@ -24,6 +24,7 @@
 
 ;; Projectile
 (setq projectile-completion-system 'grizzl)
+(define-key projectile-command-map (kbd "s f") 'imenu)
 
 ;; Projectile ag-search
 (setq ag-arguments (list "--after=5" "--before=3" "--line-number" "--smart-case" "--nogroup" "--column" "--stats" "--"))
