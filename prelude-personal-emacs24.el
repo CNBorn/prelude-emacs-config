@@ -39,6 +39,7 @@
 (prelude-require-package 'workgroups2)
 (setq wg-prefix-key (kbd "C-z"))
 (setq wg-morph-on nil)
+(setq wg-mode-line-display-on nil)
 (setq wg-session-file "~/.emacs.d/.emacs_workgroups")
 (setq wg-emacs-exit-save-behavior           'save)
 (setq wg-workgroups-mode-exit-save-behavior 'save)
