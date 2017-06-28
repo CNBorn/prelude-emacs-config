@@ -11,8 +11,8 @@
 ;;Font
 (set-frame-font "Source Code Pro 20")
 (set-fontset-font "fontset-default" 'han '("STHeiti"))
-(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-14")
-(set-face-attribute 'mode-line-inactive nil :font "DejaVu Sans Mono-14")
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono for Powerline-14")
+(set-face-attribute 'mode-line-inactive nil :font "DejaVu Sans Mono for Powerline-14")
 
 (global-set-key "\C-x\C-r" 'revert-buffer) ;; reload buffer
 (global-set-key "\C-x\C-m" 'comment-region) ;; comment-region
