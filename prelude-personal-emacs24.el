@@ -115,7 +115,13 @@
   ;;; http://web-mode.org/
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
+  (setq web-mode-code-indent-offset 2)
+
+  (flycheck-mode t)
+  (flycheck-select-checker 'javascript-eslint)
+
+  )
+
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; adjust indents for js-mode to 2 spaces
