@@ -3,6 +3,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(package-initialize)
+
 ;;color-theme
 (require 'prelude-packages)
 (prelude-require-package 'color-theme-sanityinc-tomorrow)
@@ -34,19 +36,6 @@
 
 ;; mode-line
 (setq size-indication-mode nil)
-
-;; workgroups
-(prelude-require-package 'workgroups2)
-(setq wg-prefix-key (kbd "C-z"))
-(setq wg-morph-on nil)
-(setq wg-mode-line-display-on nil)
-(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
-(setq wg-emacs-exit-save-behavior           'save)
-(setq wg-workgroups-mode-exit-save-behavior 'save)
-;; Make sure workgroups are saved when created.
-;; Ideally a wg-after-create-workgroup-hook will help
-(add-hook 'wg-before-switch-to-workgroup-hook 'wg-save-session)
-(workgroups-mode 1)
 
 ;; save states
 (setq desktop-restore-frames nil)
@@ -83,6 +72,23 @@
 
 ;; Disable guru-mode
 (setq prelude-guru nil)
+
+;; workgroups
+(require 'workgroups2)
+(setq wg-prefix-key (kbd "C-z"))
+(setq wg-morph-on nil)
+(setq wg-mode-line-display-on nil)
+(setq wg-blank-on-new-workgroup 't)
+(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
+(setq wg-emacs-exit-save-behavior 'save)
+(setq wg-workgroups-mode-exit-save-behavior 'save)
+;; Make sure workgroups are saved when created.
+;; Ideally a wg-after-create-workgroup-hook will help
+(add-hook 'wg-before-switch-to-workgroup-hook 'wg-save-session)
+(workgroups-mode 1)
+
+;; Pyenv
+(prelude-require-package 'pyenv-mode)
 
 ;; ES6
 (prelude-require-package 'flycheck)
