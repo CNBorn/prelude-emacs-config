@@ -73,6 +73,9 @@
 ;; Disable guru-mode
 (setq prelude-guru nil)
 
+;; limit line length
+(setq whitespace-line-column 120)
+
 ;; workgroups
 (require 'workgroups2)
 (setq wg-prefix-key (kbd "C-z"))
