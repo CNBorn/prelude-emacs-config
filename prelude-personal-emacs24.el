@@ -30,6 +30,8 @@
 
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+
 (setq helm-full-frame 1)
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -40,6 +42,10 @@
 
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
+
+;; powerline
+(require 'powerline)
+(powerline-default-theme)
 
 ;; Projectile ag-search
 (setq ag-arguments (list "--after=5" "--before=3" "--line-number" "--smart-case" "--nogroup" "--column" "--stats" "--"))
@@ -89,19 +95,10 @@
 ;; limit line length
 (setq whitespace-line-column 120)
 
-;; workgroups
-(require 'workgroups2)
-(setq wg-prefix-key (kbd "C-z"))
-(setq wg-morph-on nil)
-(setq wg-mode-line-display-on nil)
-(setq wg-blank-on-new-workgroup 't)
-(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
-(setq wg-emacs-exit-save-behavior 'save)
-(setq wg-workgroups-mode-exit-save-behavior 'save)
-;; Make sure workgroups are saved when created.
-;; Ideally a wg-after-create-workgroup-hook will help
-(add-hook 'wg-before-switch-to-workgroup-hook 'wg-save-session)
-(workgroups-mode 1)
+;; perspective
+(require persp-mode)
+(persp-mode 1)
+(setq persp-mode-prefix-key (kbd "C-z"))
 
 ;; Pyenv
 (prelude-require-package 'pyenv-mode)
