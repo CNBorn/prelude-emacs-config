@@ -27,6 +27,7 @@
 ;; Projectile
 (setq projectile-completion-system 'helm)
 (define-key projectile-command-map (kbd "s f") 'imenu)
+(define-key projectile-command-map (kbd "s s") 'helm-ag)
 
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -46,9 +47,6 @@
 ;; powerline
 (require 'powerline)
 (powerline-default-theme)
-
-;; Projectile ag-search
-(setq ag-arguments (list "--after=5" "--before=3" "--line-number" "--smart-case" "--nogroup" "--column" "--stats" "--"))
 
 ;; The Silver Searcher
 (prelude-require-package 'ag)
