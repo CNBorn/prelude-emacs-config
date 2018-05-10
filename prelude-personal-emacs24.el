@@ -109,6 +109,11 @@
 ;; Pyenv
 (prelude-require-package 'pyenv-mode)
 
+(add-hook 'ruby-mode-hook 'robe-mode)
+
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
 ;; ES6
 (prelude-require-package 'flycheck)
 (prelude-require-package 'web-mode)
