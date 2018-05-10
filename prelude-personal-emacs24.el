@@ -54,6 +54,7 @@
 ;; powerline
 (require 'powerline)
 (powerline-default-theme)
+(setq powerline-display-buffer-size nil)
 
 ;; The Silver Searcher
 (prelude-require-package 'ag)
