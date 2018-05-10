@@ -26,8 +26,15 @@
 
 ;; Projectile
 (setq projectile-completion-system 'helm)
-(define-key projectile-command-map (kbd "s f") 'imenu)
-(define-key projectile-command-map (kbd "s s") 'helm-ag)
+(define-key projectile-command-map (kbd "s g") 'helm-imenu-anywhere)
+(define-key projectile-command-map (kbd "s l") 'helm-imenu)
+(define-key projectile-command-map (kbd "s s") 'helm-ag-project-root)
+
+;; Helm-ag (uses rg)
+(custom-set-variables
+ '(helm-follow-mode-persistent t))
+(setq helm-ag-insert-at-point 'symbol)
+(setq helm-ag-base-command "rg --vimgrep --no-heading")
 
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
