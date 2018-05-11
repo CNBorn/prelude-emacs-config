@@ -114,42 +114,9 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
-;; ES6
+;; Flycheck
 (prelude-require-package 'flycheck)
-(prelude-require-package 'web-mode)
-
-;; use web-mode for .jsx files
-(add-to-list 'auto-mode-alist '("\\.js\\`" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\`" . web-mode))
-
-;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-;; disable jshint since we prefer eslint checking
-(setq-default flycheck-disabled-checkers '(javascript-jshint))
-
-;; use eslint with web-mode for jsx files
-(require 'flycheck)
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-(flycheck-add-mode 'javascript-eslint 'javascript-mode)
-
-;; adjust indents for web-mode to 2 spaces
-(defun my-web-mode-hook ()
-  "Hooks for Web mode. Adjust indents"
-  ;;; http://web-mode.org/
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-
-  (flycheck-mode t)
-  (flycheck-select-checker 'javascript-eslint)
-
-  )
-
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-
-;; adjust indents for js-mode to 2 spaces
-(setq js-indent-level 2)
 
 (provide 'prelude-personal-emacs24)
 
