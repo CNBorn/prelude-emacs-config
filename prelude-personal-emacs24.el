@@ -56,12 +56,6 @@
 (powerline-default-theme)
 (setq powerline-display-buffer-size nil)
 
-;; The Silver Searcher
-(prelude-require-package 'ag)
-
-;; mode-line
-(setq size-indication-mode nil)
-
 ;; save states
 (setq desktop-restore-frames nil)
 (setq desktop-dirname             "~/.emacs.d/"
