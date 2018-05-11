@@ -52,7 +52,7 @@
 (setq helm-completion-in-region-fuzzy-match t)
 
 ;; powerline
-(require 'powerline)
+(prelude-require-package 'powerline)
 (powerline-default-theme)
 (setq powerline-display-buffer-size nil)
 
@@ -102,7 +102,7 @@
 (setq whitespace-line-column 120)
 
 ;; perspective
-(require persp-mode)
+(prelude-require-package 'persp-mode)
 (persp-mode 1)
 (setq persp-mode-prefix-key (kbd "C-z"))
 
