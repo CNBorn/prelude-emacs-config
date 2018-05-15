@@ -96,9 +96,10 @@
 (setq whitespace-line-column 120)
 
 ;; perspective
-(prelude-require-package 'persp-mode)
-(persp-mode 1)
 (setq persp-mode-prefix-key (kbd "C-z"))
+(prelude-require-package 'perspective)
+(require 'perspective)
+(persp-mode 1)
 
 ;; Pyenv
 (prelude-require-package 'pyenv-mode)
