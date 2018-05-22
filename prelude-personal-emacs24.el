@@ -13,8 +13,8 @@
 ;;Font
 (set-frame-font "Source Code Pro 20")
 (set-fontset-font "fontset-default" 'han '("STHeiti"))
-(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono for Powerline-14")
-(set-face-attribute 'mode-line-inactive nil :font "DejaVu Sans Mono for Powerline-14")
+
+(scroll-bar-mode -1)
 
 (global-set-key "\C-x\C-r" 'revert-buffer) ;; reload buffer
 (global-set-key "\C-x\C-m" 'comment-region) ;; comment-region
@@ -55,6 +55,11 @@
 (prelude-require-package 'powerline)
 (powerline-default-theme)
 (setq powerline-display-buffer-size nil)
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono for Powerline-10")
+(set-face-attribute 'mode-line-inactive nil :font "DejaVu Sans Mono for Powerline-10")
+(set-face-attribute 'mode-line nil :height 90)
+(set-face-attribute 'mode-line-inactive nil :height 90)
+(setq powerline-default-separator 'utf-8)
 
 ;; save states
 (setq desktop-restore-frames nil)
