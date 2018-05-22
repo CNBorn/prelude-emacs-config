@@ -61,6 +61,20 @@
 (set-face-attribute 'mode-line-inactive nil :height 90)
 (setq powerline-default-separator 'utf-8)
 
+;; diminish minor-modes
+(diminish 'editorconfig-mode)
+(diminish 'company-mode)
+(diminish 'flycheck-mode)
+(diminish 'smartparens-mode)
+(diminish 'prelude-mode)
+(diminish 'which-key-mode)
+(diminish 'auto-revert-mode)
+(diminish 'whitespace-mode)
+(diminish 'text-scale-mode)
+(diminish 'beacon-mode)
+(diminish 'subword-mode)
+(diminish 'abbrev-mode)
+
 ;; save states
 (setq desktop-restore-frames nil)
 (setq desktop-dirname             "~/.emacs.d/"
