@@ -39,6 +39,7 @@
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (setq helm-full-frame 1)
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
@@ -74,6 +75,7 @@
 (diminish 'beacon-mode)
 (diminish 'subword-mode)
 (diminish 'abbrev-mode)
+(diminish 'robe-mode)
 
 ;; save states
 (setq desktop-restore-frames nil)
@@ -116,6 +118,7 @@
 
 ;; perspective
 (setq persp-mode-prefix-key (kbd "C-z"))
+(set-face-attribute 'persp-selected-face nil :foreground "#8abeb7")
 (prelude-require-package 'perspective)
 (require 'perspective)
 (persp-mode 1)
